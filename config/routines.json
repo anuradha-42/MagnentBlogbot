@@ -1,0 +1,36 @@
+{
+  "routines": [
+    {
+      "name": "MagnentBlogBot — Evening Prompt",
+      "id": "trig_015sPswrDPMUR4qjJkp3nSeX",
+      "cron_utc": "30 12 * * *",
+      "schedule_ist": "6:00pm daily",
+      "model": "claude-sonnet-4-6",
+      "prompt_file": "prompts/evening-prompt.md",
+      "mcp_connections": ["Slack"],
+      "environment_id": "env_014gdBmxi1rhQRaAzhvkidoy"
+    },
+    {
+      "name": "MagnentBlogBot — Overnight Writer",
+      "id": "trig_01QCZGXmC7odr6eyLhSZPvoz",
+      "cron_utc": "0 18 * * *",
+      "schedule_ist": "11:30pm daily",
+      "model": "claude-sonnet-4-6",
+      "prompt_file": "prompts/overnight-writer.md",
+      "mcp_connections": ["Notion", "Slack"],
+      "environment_id": "env_014gdBmxi1rhQRaAzhvkidoy"
+    }
+  ],
+  "notion": {
+    "blog_queue_url": "https://www.notion.so/d6ca4cb0d13740aea712c5cacd3b0c00",
+    "blog_queue_collection_id": "f85a8d2c-3121-4287-99f3-36a77ff14c54",
+    "blog_posts_url": "https://www.notion.so/2fbf3d223ec0467e8fe0af5905293159",
+    "blog_posts_collection_id": "4612828a-b964-4562-90a3-1a6f58abd1b6",
+    "magnent_clients_url": "https://app.notion.com/p/8cfbdd7fbba94adcb73c36306fcd6666",
+    "magnent_clients_collection_id": "820fe546-c2b3-4407-8ba3-a1397619fc9b"
+  },
+  "slack": {
+    "workspace": "magnentworkspace.slack.com",
+    "notify_user_id": "U0AGFC54U9W"
+  }
+}
