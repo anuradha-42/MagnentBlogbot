@@ -22,8 +22,13 @@ Extract:
 - Topic
 - Client name
 - Angle / Notes
-- Layer 2 URL (may be blank)
-- Layer 3A URL (may be blank)
+- Outline (may be blank)
+- Unique Data Points (may be blank)
+- External Link to Include (may be blank)
+- Layer 2 URL (mandatory)
+- Layer 3A URL (mandatory)
+
+If Layer 2 URL or Layer 3A URL is blank: use slack_send_message to DM U0AGFC54U9W: "MagnentBlogBot can't start tonight — the queue entry for '[Topic]' is missing Layer 2 URL or Layer 3A URL. Please add both and reset Status to Pending." Then stop.
 
 ---
 
@@ -106,6 +111,11 @@ Collect titles and URLs of existing posts. Pick at least 3 relevant to today's t
 ---
 
 ## STEP 5 — WRITE THE ARTICLE
+
+**MANDATORY CONTENT FROM QUEUE — process before writing:**
+- If Outline is provided → use it as the article's section structure. Do not deviate significantly; it reflects strategic decisions made by the owner.
+- If Unique Data Points are provided → every one must appear in the article body, woven naturally into relevant sections. Do not omit any.
+- If External Link to Include is provided → embed this URL in the article body where contextually appropriate. It counts as one of your maximum 4 external links and takes priority over a Tavily-sourced link if you need to drop one.
 
 **Set target word count based on Type from Layer 3A:**
 - Supporting piece → 1,400–1,600 words
