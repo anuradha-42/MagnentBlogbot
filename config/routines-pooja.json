@@ -1,0 +1,32 @@
+  {                                                                                                                                                                                                         
+    "owner": "Pooja",
+    "github": "coffee-me-please",
+    "routines": [
+      {                                                                                                                                                                                                     
+        "name": "MagnentBlogBot — Evening Prompt (Pooja)",
+        "id": "trig_01VTtM3BpZo1fCfm6j3EFmaJ",                                                                                                                                                              
+        "cron_utc": "30 12 * * *",                                                                                                                                                                          
+        "schedule_ist": "6:00pm daily",                                                                                                                                                                     
+        "model": "claude-sonnet-4-6",                                                                                                                                                                       
+        "mcp_connections": ["Slack"],                                                                                                                                                                       
+        "environment_id": "env_01SZuL13ADcf9SYk3fCgjRYj"                                                                                                                                                    
+      },                                                                                                                                                                                                    
+      {                                                                                                                                                                                                     
+        "name": "MagnentBlogBot — Overnight Writer (Pooja)",                                                                                                                                                
+        "id": "trig_013EXZgBrWcMrjfXSowQLh6f",                                                                                                                                                              
+        "cron_utc": "0 18 * * *",                                                                                                                                                                           
+        "schedule_ist": "11:30pm daily",                                                                                                                                                                    
+        "model": "claude-sonnet-4-6",                                                                                                                                                                       
+        "mcp_connections": ["Notion", "Slack"],                                                                                                                                                             
+        "environment_id": "env_01SZuL13ADcf9SYk3fCgjRYj"
+      }                                                                                                                                                                                                     
+    ],            
+    "notion": {                                                                                                                                                                                             
+      "blog_queue_url": "https://www.notion.so/d6ca4cb0d13740aea712c5cacd3b0c00",
+      "blog_posts_url": "https://www.notion.so/2fbf3d223ec0467e8fe0af5905293159"                                                                                                                            
+    },                                                                                                                                                                                                      
+    "slack": {                                                                                                                                                                                              
+      "workspace": "magnentworkspace.slack.com",                                                                                                                                                            
+      "notify_user_id": "U0AFQMRGPAQ"                                                                                                                                                                       
+    }                                                                                                                                                                                                       
+  }
