@@ -145,7 +145,7 @@ All rules below are non-negotiable.
 - Internal links: Minimum 3, woven naturally into body text. Descriptive anchor text only — never "click here", "read more", or "here". No two consecutive paragraphs should link to the same URL.
 - External links: Maximum 4, from approved Tier 1/2/3 sources only. Embedded where the cited fact appears. Spread across different sections. No competitor links. No duplicate anchor text for different URLs within the same post.
 - Internal links must outnumber external links in every post.
-- Every statistic or data point must carry an inline source attribution with publication period — e.g. *(RBI, 2025)* or *(CRIF, Q3 2024)* — in addition to the hyperlink.
+- External links follow the same pattern as internal links: descriptive anchor text with the URL embedded behind it. Anchor text must describe what the reader will find — e.g. "the [RBI's digital lending directions](link)" or "CRIF's [Q3 2024 bureau industry report](link)". Not a bare source name alone ("RBI"), not a raw URL, not generic text ("click here", "read more").
 
 ---
 
