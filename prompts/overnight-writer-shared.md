@@ -1,11 +1,9 @@
 # MagnentBlogBot — Shared Overnight Writer Instructions
-
-This file is fetched at runtime by each agent's routine. Before starting, confirm you received these three values from the routine's prompt header:
-- Owner filter (the Notion queue Owner value to match)
-- Slack ID (the Slack user ID for all DMs)
-- Greeting name (the first name for the morning message)
-
-If any are missing, stop and do not proceed.
+#
+# HOW TO USE: Paste your identity config as the first three lines of your routine prompt, then paste this file below it:
+#   Owner filter: [your name as it appears in the Notion queue Owner field]
+#   Slack ID: [your Slack user ID]
+#   Greeting name: [your first name]
 
 ---
 
