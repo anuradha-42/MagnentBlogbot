@@ -84,28 +84,61 @@ Do not proceed without confirmed Target keyword, Type, and Step 3 gap.
 
 ## STEP 3 — WEB RESEARCH
 
-Use the WebSearch tool to run three searches. Tailor each query to the client's industry and regulatory context using what you learned in Step 2. Do NOT default to India/RBI for non-fintech clients.
+**External Link Pre-fetch — run this BEFORE the three web searches below.**
 
-Determine the right query shape from the client context:
-- For fintech / credit / lending clients: search RBI, SEBI, IRDAI, CRIF, bureau guidelines
-- For healthcare clients: search CDSCO, Ministry of Health, NMC, WHO
-- For business / legal / corporate clients: search MCA, DPIIT, Competition Commission
-- For global / international scope: search World Bank, IMF, IFC, BIS, relevant international press
-- For B2B SaaS / enterprise: search McKinsey, BCG, Gartner, Forrester, Deloitte Insights
+If External Link to Include is present in the queue:
+- Use the WebFetch tool to fetch that URL now.
+- Extract a minimum of 2 specific, usable data points from the page — precise figures, percentages, survey results, dated findings, or named statistics. Vague claims ("many companies", "significant growth") do not count.
+- Record: the extracted data points verbatim, the page's author or publisher name, and the publication or last-updated date if visible.
+- If the page is paywalled or fails to load: note this, do NOT fabricate data, and treat the External Link field as blank for Step 5.
 
-Run these three searches:
-1. "[TOPIC] [industry-relevant authority] overview [relevant geography] [year]"
-2. "[TOPIC] [applicable regulation or compliance framework] [relevant jurisdiction]"
+Do not proceed to the three searches below without completing this if an external link is present.
+
+---
+
+**Determine client geography before running searches.**
+
+From the client name, content guidelines, and Layer 3A context loaded in Step 2, identify the client's primary jurisdiction. Use that jurisdiction to select the correct authority sources from the table below. If the client's jurisdiction is ambiguous or explicitly international, use Global.
+
+| Jurisdiction | Fintech / Credit / Lending | Healthcare / Life Sciences | Business / Legal / Corporate | B2B SaaS / Enterprise |
+|---|---|---|---|---|
+| India | RBI, SEBI, IRDAI, CRIF, Sahamati | CDSCO, Ministry of Health, NMC | MCA, DPIIT, Competition Commission, NITI Aayog | DPIIT, Nasscom, IAMAI |
+| United States | SEC, CFPB, FDIC, OCC, FINRA | FDA, NIH, CDC, CMS | FTC, DOJ, SBA, USPTO | NIST, FTC, NTIA |
+| European Union | ECB, EBA, ESMA | EMA, ECDC, European Commission | European Commission, ESMA, OECD | ENISA, European Commission |
+| United Kingdom | FCA, PRA, FOS | MHRA, NHS, NICE | CMA, Companies House, FRC | ICO, NCSC, CMA |
+| Singapore / APAC | MAS, HKMA, APRA (AU) | HSA (SG), TGA (AU), MOH (SG) | ACRA (SG), ASIC (AU) | IMDA (SG), AIIA (AU) |
+| Global / Unknown | BIS, IMF, IFC, World Bank | WHO, OECD | OECD, World Bank, ICC | McKinsey, Gartner, Forrester, OECD |
+
+Run these three searches using the correct jurisdiction-specific authorities from the table:
+1. "[TOPIC] [jurisdiction authority for client industry] [year]"
+2. "[TOPIC] [applicable regulation or compliance framework for client jurisdiction] [year]"
 3. "[TOPIC] best practices [client industry] 2025 2026"
 
-**Approved external link sources only — no exceptions:**
-- Tier 1 (preferred): RBI, SEBI, IRDAI, MSME Ministry, CRIF, Sahamati, MCA, DPIIT, NITI Aayog, World Bank, IMF, IFC, CDSCO, NMC, WHO, BIS
-- Tier 2: McKinsey, BCG, Deloitte Insights, PwC, EY, KPMG, Gartner, Forrester, Harvard Business Review, MIT Sloan
-- Tier 3: Mint, Economic Times, Business Standard, Reuters, Bloomberg, Financial Times, The Ken
+**Approved external link sources — use only sources matching the client's jurisdiction, or any Global source. No exceptions.**
 
-Never link to competitor websites, product pages, Wikipedia (as a data source), affiliate sites, personal blogs, or LinkedIn articles.
+Global (valid for any client):
+- World Bank, IMF, IFC, BIS, OECD, WHO
+- McKinsey, BCG, Deloitte Insights, PwC, EY, KPMG, Gartner, Forrester, Harvard Business Review, MIT Sloan
+- Reuters, Bloomberg, Financial Times, The Economist
 
-Collect 4 authoritative external source URLs from approved tiers. Note the source name and publication year for each — you will need these for inline attribution.
+India-jurisdiction:
+- RBI, SEBI, IRDAI, MSME Ministry, CRIF, Sahamati, MCA, DPIIT, NITI Aayog, CDSCO, NMC, Nasscom, Mint, Economic Times, Business Standard, The Ken
+
+US-jurisdiction:
+- SEC, CFPB, FDIC, OCC, FINRA, FDA, NIH, CDC, FTC, SBA, NIST, Wall Street Journal, TechCrunch (for SaaS only)
+
+EU-jurisdiction:
+- ECB, EBA, ESMA, EMA, ECDC, European Commission, Euronews Business
+
+UK-jurisdiction:
+- FCA, PRA, MHRA, CMA, FRC, ICO, NHS, NICE, Companies House, The Guardian (business section), City A.M.
+
+Singapore / APAC-jurisdiction:
+- MAS, HKMA, APRA, TGA, ACRA, ASIC, IMDA, Channel NewsAsia (business), Australian Financial Review
+
+Never link to: competitor websites, product pages, Wikipedia (as a data source), affiliate sites, personal blogs, or LinkedIn articles.
+
+Collect 4 authoritative external source URLs from the approved sources for the client's jurisdiction. Note the source name and publication year for each — you will need these for inline attribution.
 
 ---
 
@@ -121,7 +154,7 @@ Collect titles and URLs of existing posts. Pick at least 3 relevant to today's t
 **MANDATORY CONTENT FROM QUEUE — process before writing:**
 - If Outline is provided → use it as the article's section structure. Do not deviate significantly; it reflects strategic decisions made by the owner.
 - If Unique Data Points are provided → every one must appear in the article body, woven naturally into relevant sections. Do not omit any.
-- If External Link to Include is provided → embed this URL in the article body where contextually appropriate. It counts as one of your maximum 4 external links and takes priority over a WebSearch-sourced link if you need to drop one.
+- If External Link to Include is provided → this link was pre-fetched in Step 3. Do not simply drop the URL into the article. At least 2 of the specific data points extracted from that page must be woven meaningfully into the article body — cited inline with the publisher name and publication period, embedded at the exact sentence where the data appears. The link itself must be placed as descriptive anchor text at that sentence, not in a separate reference section. It counts as one of your maximum 4 external links and takes priority over a WebSearch-sourced link if you need to drop one. A link that appears in the article without any of its data being used is a failure of this instruction.
 
 **Set target word count based on Type from Layer 3A:**
 - Supporting piece → 1,400–1,600 words
@@ -174,7 +207,7 @@ All rules below are non-negotiable.
 
 ### TONE
 
-- Technically precise, not academic. Reader: credit professional, fintech practitioner, or business decision-maker.
+- Technically precise, not academic. Reader: use the Persona from Layer 3A — write for that specific reader, not a generic placeholder.
 - No fluff. No unproven superlatives. Max 2-3 sentences per paragraph. Third-person throughout — no "we", "our", or "you" in the narrative body.
 - No passive voice in direct-answer blocks. Use subject-verb-object constructions.
 - Include at least one non-obvious insight — something the reader would not find in a competitor's version of the same article.
@@ -226,6 +259,8 @@ The following are banned. If any appear in the draft, rewrite before proceeding.
 - [ ] WordPress-clean
 - [ ] Word count meets minimum for this post Type
 - [ ] All external links use descriptive anchor text with URL embedded, not bare source names
+- [ ] If External Link to Include was provided: minimum 2 data points extracted from it appear in the article body with inline attribution
+- [ ] External Link to Include is embedded at the sentence where its data is cited — not placed arbitrarily elsewhere in the article
 
 ---
 
