@@ -145,7 +145,16 @@ Collect 4 authoritative external source URLs from the approved sources for the c
 ## STEP 4 — EXISTING BLOG POSTS FOR INTERNAL LINKING
 
 Use notion-fetch on: https://www.notion.so/2fbf3d223ec0467e8fe0af5905293159
-Collect titles and URLs of existing posts. Pick at least 3 relevant to today's topic for internal backlinks.
+
+For every page returned, record:
+- The exact Notion page URL as returned by the MCP tool
+- The page title
+
+Store this as your internal link inventory. Do NOT construct, guess, or infer any internal URLs — not from slugs, not from patterns like `/blog/[topic]`, not from anything other than the actual URLs returned by this notion-fetch call. A URL you did not receive from this tool does not exist as far as this run is concerned.
+
+From the inventory, select at least 3 posts whose titles are topically relevant to today's article. If fewer than 3 relevant posts exist, use as many as are genuinely relevant — do not force irrelevant links to hit a number.
+
+The internal link inventory from this step is the ONLY source of internal URLs permitted in Step 5. Any internal link in the article that does not appear in this inventory must be removed before the article is finalised.
 
 ---
 
@@ -181,10 +190,20 @@ All rules below are non-negotiable.
 
 ### BACKLINKS — EMBEDDED IN BODY
 
-- Internal links: Minimum 3, woven naturally into body text. Descriptive anchor text only — never "click here", "read more", or "here". No two consecutive paragraphs should link to the same URL.
+- Internal links: Minimum 3, woven naturally into body text. Descriptive anchor text only — never "click here", "read more", or "here". No two consecutive paragraphs should link to the same URL. **Every internal URL must come from the inventory built in Step 4 — verbatim. No constructed, guessed, or inferred URLs.**
 - External links: Maximum 4, from approved Tier 1/2/3 sources only. Embedded where the cited fact appears. Spread across different sections. No competitor links. No duplicate anchor text for different URLs within the same post.
 - Internal links must outnumber external links in every post.
 - External links follow the same pattern as internal links: descriptive anchor text with the URL embedded behind it. Anchor text must describe what the reader will find — e.g. "the [RBI's digital lending directions](link)" or "CRIF's [Q3 2024 bureau industry report](link)". Not a bare source name alone ("RBI"), not a raw URL, not generic text ("click here", "read more").
+
+**After completing the draft — Link Audit (mandatory before proceeding to Step 6):**
+
+Extract every URL used in the article. For each:
+
+*Internal links:* Check the URL against the Step 4 inventory. If it is not in the inventory, the link does not exist — remove the hyperlink and keep the anchor text as plain text, or replace the link with a different post from the inventory that is genuinely relevant.
+
+*External links:* Use the WebFetch tool to fetch a HEAD or GET request for each URL. If the fetch returns a 4xx or 5xx status, or fails entirely, remove that link and replace it with a different approved-source URL from the Step 3 research results. Do not leave a dead external link in the article.
+
+Log any links removed or replaced in the Step 9 Slack message.
 
 ---
 
@@ -244,9 +263,14 @@ The following are banned. If any appear in the draft, rewrite before proceeding.
 - [ ] Keyword in at least one H2
 - [ ] Keyword in meta description
 - [ ] Brand name in paragraph 1
+- [ ] Brand name in summary block
+- [ ] Summary block present immediately below H1 — 2–3 sentences, keyword included, no "In this article" opener
+- [ ] Table of Contents present after summary block — bulleted list of H2 titles only
 - [ ] Direct-answer block ("In short…") in first 150 words, brand name included
 - [ ] Min 3 internal links in body, descriptive anchor text
+- [ ] Every internal link URL verified against Step 4 inventory — no guessed or constructed URLs
 - [ ] Max 4 external links, all from approved tiers, spread across sections
+- [ ] Every external link verified live via WebFetch — no 404s or dead links
 - [ ] Internal links outnumber external links
 - [ ] All data points carry inline source attribution with publication period
 - [ ] No duplicate anchor text for different URLs
@@ -261,25 +285,29 @@ The following are banned. If any appear in the draft, rewrite before proceeding.
 - [ ] All external links use descriptive anchor text with URL embedded, not bare source names
 - [ ] If External Link to Include was provided: minimum 2 data points extracted from it appear in the article body with inline attribution
 - [ ] External Link to Include is embedded at the sentence where its data is cited — not placed arbitrarily elsewhere in the article
+- [ ] Footer contains: Slug, Meta Description (exactly 150 chars), Tags (4–6), Word Count, Post Type
 
 ---
 
 ### ARTICLE STRUCTURE
 
 1. H1
-2. Opening paragraph — scenario-led (real situation involving the Persona identified in Step 2 — use the specific persona type from Layer 3A/Layer 1, not a generic placeholder), client brand present, direct-answer block ("In short…") within first 150 words
-3. 4-5 H2 sections with H3 subsections, answer-first, links and source attributions embedded naturally throughout
-4. At least one simple table or numbered list for any data being compared
-5. FAQ — 5-6 Q&As
-6. Closing paragraph — soft CTA with client brand
+2. **Summary block** — A standalone 2–3 sentence paragraph immediately below the H1. Purpose: tell the reader what the article covers and what they will take away. Must include the target keyword and the client brand name. This is what RSS readers, email digests, and AI engines extract as the excerpt — write it as a complete, standalone answer to the article's core question. Do not begin with "In this article" or "This post will cover". Write it as a direct statement of what the reader gains.
+3. **Table of Contents** — A bulleted list of all H2 section titles in order. Label it "In this article:" (no heading tag — just plain bold text or a label). List only H2 titles, not H3s. Do not use anchor links — plain text list only.
+4. Opening paragraph — scenario-led (real situation involving the Persona identified in Step 2 — use the specific persona type from Layer 3A/Layer 1, not a generic placeholder), client brand present, direct-answer block ("In short…") within first 150 words
+5. 4-5 H2 sections with H3 subsections, answer-first, links and source attributions embedded naturally throughout
+6. At least one simple table or numbered list for any data being compared
+7. FAQ — 5-6 Q&As
+8. Closing paragraph — soft CTA with client brand
 
 End with footer (outside article body):
 
 ```
 VISIBILITY GAP ADDRESSED: [Step 3 gap from Layer 3A]
 TARGET KEYWORD: [from Layer 3A]
-SUGGESTED SLUG: [short, keyword-rich, no stop words — e.g. /bureau-score-vs-cibil]
-META DESCRIPTION: [150-160 chars, keyword included, clear value proposition]
+SLUG: /[short, keyword-rich, no stop words — e.g. bureau-score-vs-cibil — no leading slash needed if your CMS adds it]
+META DESCRIPTION: [Write this to exactly 150 characters — count carefully. Must include the target keyword and a clear reader benefit. Do not truncate mid-word.]
+TAGS: [4–6 comma-separated tags — mix of broad topic tags and specific keyword tags, e.g. "credit bureau, CIBIL score, credit risk India, bureau data, lender technology"]
 WORD COUNT: [approximate]
 POST TYPE: [Supporting piece / Cornerstone / Comparison page]
 ```
@@ -295,7 +323,9 @@ Use notion-create-pages MCP tool to create a new page in https://www.notion.so/2
 - Status: "Needs Review"
 - Generated Date: today
 - Primary Keyword: target keyword
+- Slug: from footer
 - Meta Description: from footer
+- Tags: from footer (comma-separated)
 - Word Count: from footer
 
 Page body in Notion blocks: heading_1, heading_2, heading_3, paragraph, bulleted_list_item, numbered_list_item.
@@ -463,9 +493,12 @@ Article: [H1 title]
 Client: [client name]
 Type: [post type]
 Keyword: [target keyword]
-Slug: [suggested slug]
+Slug: [slug from footer]
+Tags: [tags from footer]
 Visibility gap: [Step 3 gap]
 Ready to review: [notion article URL]
+
+Links: [one of: "All links verified ✓" | "X link(s) removed/replaced — [brief description of what was fixed]"]
 
 Derivatives: [comma-separated list of generated asset types, or "None requested"]
 Distribution Package: [subpage URL, or "Generation failed — see run output", or "Not requested"]
