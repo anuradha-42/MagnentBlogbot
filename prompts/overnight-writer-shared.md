@@ -392,16 +392,24 @@ For each post, note: Angle, Tone, Suggested CTA, then full post text.
 
 Generate only if LinkedIn Article = Yes.
 
-Do NOT rewrite the blog. Create a higher-level thought leadership piece that expands the strategic implications with original framing.
+Do NOT rewrite the blog. Create a full, standalone thought leadership article that expands the strategic implications with original framing. Minimum 1,500 words — LinkedIn articles are indexed by Google and crawled by AI engines; length and substance directly determine AEO visibility.
 
-Include:
-- Title
-- Strategic Angle (one sentence)
-- Intro (2-3 sentences, executive tone)
-- Suggested Outline (4-5 section headings)
-- Conclusion CTA
+Structure:
+1. **Title** — keyword-rich, executive framing (not a blog headline style)
+2. **Opening** — 2-3 sentences that establish the stakes. No "I'm excited to share" opener. Start with a specific observation, tension, or counter-intuitive fact.
+3. **Body** — 4-5 substantive sections with clear subheadings. Each section must make a distinct argument or provide a distinct insight. Do NOT list talking points — write argued prose. No section should be under 150 words.
+4. **Strategic takeaway** — a concise, non-obvious conclusion the reader can act on. Not a summary.
+5. **Closing CTA** — one sentence. Invite response or reflection, not clicks.
 
-Tone: executive, strategic, insightful. Not promotional.
+Rules:
+- All banned phrases and structures from Step 5 apply here too
+- No AI tells
+- No promotional language about the client's product
+- Third-person throughout (no "we" or "our") except in the closing CTA if it's a genuine question to the reader
+- At least one data point or named example in every section
+- Tone: executive, analytical, direct — write as a practitioner who has seen the problem from the inside
+
+Word count target: 1,500–2,000 words.
 
 ---
 
