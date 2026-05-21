@@ -58,7 +58,8 @@ If blank → use notion-search for "{client} Layer 2" and notion-fetch the top r
 Extract ONLY:
 (a) Content audit — the 3 most recently published blog entries: title, primary keyword, pillar
 (b) Confirmed pillars and their target keywords
-Stop reading once you have both. Skip all other sections.
+(c) Client website domain — the base URL where the blog is published (e.g. `https://clientname.com`). Look for a field named "Website", "Domain", "Blog URL", or similar. Record this exactly — it is required for constructing internal links in Step 4.
+Stop reading once you have all three. Skip all other sections.
 
 **Layer 3A:**
 If Layer 3A URL is in the queue → use notion-fetch on that URL.
@@ -140,19 +141,25 @@ Never link to: competitor websites, product pages, Wikipedia (as a data source),
 
 Collect 4 authoritative external source URLs from the approved sources for the client's jurisdiction. Note the source name and publication year for each — you will need these for inline attribution.
 
+**Source diversity is mandatory: no two of the 4 external links may come from the same organisation or root domain.** For example, two RBI links count as one source. The 4 links must represent 4 distinct organisations. Mix regulatory bodies, research institutions, and reputable media where possible — do not default to a single authority for all citations.
+
 ---
 
 ## STEP 4 — EXISTING BLOG POSTS FOR INTERNAL LINKING
 
 Use notion-fetch on: https://www.notion.so/2fbf3d223ec0467e8fe0af5905293159
 
-For every page returned, record:
-- The exact Notion page URL as returned by the MCP tool
-- The page title
+For every page returned, record the page title and its **published website URL** — not the Notion page URL. Derive the published URL as follows, in priority order:
 
-Store this as your internal link inventory. Do NOT construct, guess, or infer any internal URLs — not from slugs, not from patterns like `/blog/[topic]`, not from anything other than the actual URLs returned by this notion-fetch call. A URL you did not receive from this tool does not exist as far as this run is concerned.
+1. Look for a property named "Published URL", "URL", "Website URL", or "Live URL" in the page properties. If found and non-empty, use that value verbatim.
+2. If no URL property exists but a "Slug" property is present, construct the URL as: `[client website domain from Step 2]/blog/[slug]` — using the exact domain and slug values, no modifications.
+3. If neither a URL property nor a Slug property is present, exclude that post from the inventory entirely. A link to notion.so is not an internal blog link and must never appear in the article.
 
-From the inventory, select at least 3 posts whose titles are topically relevant to today's article. If fewer than 3 relevant posts exist, use as many as are genuinely relevant — do not force irrelevant links to hit a number.
+Store the result as your internal link inventory: a list of {title, published_url} pairs.
+
+Do NOT use Notion page URLs (notion.so/...) as internal links under any circumstance. Internal links must point to pages on the client's own domain.
+
+From the inventory, select at least 3 posts whose titles are topically relevant to today's article. If fewer than 3 eligible posts exist (with confirmed published URLs), use as many as are genuinely available — do not force irrelevant links to hit a number.
 
 The internal link inventory from this step is the ONLY source of internal URLs permitted in Step 5. Any internal link in the article that does not appear in this inventory must be removed before the article is finalised.
 
@@ -191,7 +198,7 @@ All rules below are non-negotiable.
 ### BACKLINKS — EMBEDDED IN BODY
 
 - Internal links: Minimum 3, woven naturally into body text. Descriptive anchor text only — never "click here", "read more", or "here". No two consecutive paragraphs should link to the same URL. **Every internal URL must come from the inventory built in Step 4 — verbatim. No constructed, guessed, or inferred URLs.**
-- External links: Maximum 4, from approved Tier 1/2/3 sources only. Embedded where the cited fact appears. Spread across different sections. No competitor links. No duplicate anchor text for different URLs within the same post.
+- External links: Maximum 4, from approved Tier 1/2/3 sources only. Embedded where the cited fact appears. Spread across different sections. No competitor links. No duplicate anchor text for different URLs within the same post. **All 4 must come from different organisations (no two from the same root domain).**
 - Internal links must outnumber external links in every post.
 - External links follow the same pattern as internal links: descriptive anchor text with the URL embedded behind it. Anchor text must describe what the reader will find — e.g. "the [RBI's digital lending directions](link)" or "CRIF's [Q3 2024 bureau industry report](link)". Not a bare source name alone ("RBI"), not a raw URL, not generic text ("click here", "read more").
 
